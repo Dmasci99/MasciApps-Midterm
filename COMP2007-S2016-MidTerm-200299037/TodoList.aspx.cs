@@ -43,7 +43,7 @@ namespace COMP2007_S2016_MidTerm_200299037
                     TodoGridView.DataBind();
                 }
                 else
-                    ErrorLabel.InnerText += "<br/>Problem retrieving Todo Data";
+                    ErrorLabel.InnerHtml += "<br/>Problem retrieving Todo Data";
             }
         }
 
@@ -75,7 +75,6 @@ namespace COMP2007_S2016_MidTerm_200299037
                         }
                     }
                 }
-                else if (e.Row.RowType == Check)
             }
         }
 
@@ -118,7 +117,7 @@ namespace COMP2007_S2016_MidTerm_200299037
                     db.SaveChanges(); //Save changes made to db
                 }
                 else
-                    ErrorLabel.InnerText += "<br/>Failed to Delete Todo";
+                    ErrorLabel.InnerHtml += "<br/>Failed to Delete Todo";
                 this.GetTodos(); //Refresh GridView
             }
         }
@@ -134,9 +133,22 @@ namespace COMP2007_S2016_MidTerm_200299037
          */ 
         protected void CompletedCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            using (TodoConnection db = new TodoConnection())
-            {
+            foreach (GridViewRow row in TodoGridView.Rows)
+            { //Loop through each row
+                if (row.RowType == DataControlRowType.DataRow)
+                {
+                    CheckBox completed = ((CheckBox)row.Cells[0].FindControl("CompletedCheckBox"));
+                    int todoID = Convert.ToInt32(TodoGridView.DataKeys[row.RowIndex].Value);
 
+                    using (TodoConnection db = new TodoConnection())
+                    {
+                        Todo currentTodo = (from todo in db.Todos
+                                        where todo.TodoID == todoID
+                                        select todo).FirstOrDefault();
+                        currentTodo.Completed = completed.Checked; //set Todo.Completed in db
+                        db.SaveChanges(); //save db
+                    }
+                }
             }
         }
     }

@@ -40,7 +40,7 @@ namespace COMP2007_S2016_MidTerm_200299037
                     CompletedCheckBox.Checked = Convert.ToBoolean(currentTodo.Completed);
                 }
                 else
-                    ErrorLabel.InnerText += "<br/>Problem retrieving Todo Data";
+                    ErrorLabel.InnerHtml += "<br/>Problem retrieving Todo Data";
             }
         }
 
@@ -66,7 +66,7 @@ namespace COMP2007_S2016_MidTerm_200299037
                                where todo.TodoID == todoID
                                select todo).FirstOrDefault();
                     if (newTodo == null)
-                        ErrorLabel.InnerText += "<br/>Problem retrieving existing Todo";
+                        ErrorLabel.InnerHtml += "<br/>Problem retrieving existing Todo";
                 }
                 //Prepare Todo with Values
                 newTodo.TodoName = NameTextBox.Text;
