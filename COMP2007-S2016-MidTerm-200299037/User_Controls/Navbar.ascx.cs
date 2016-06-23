@@ -18,6 +18,7 @@ namespace COMP2007_S2016_MidTerm_200299037
         protected void Page_Load(object sender, EventArgs e)
         {
             SetActivePage();
+            Page.MaintainScrollPositionOnPostBack = true;
         }
 
         /**
