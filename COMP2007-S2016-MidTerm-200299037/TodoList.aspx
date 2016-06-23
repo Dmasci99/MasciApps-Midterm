@@ -34,7 +34,7 @@
                     <asp:TemplateField runat="server" HeaderText="<i class='fa fa-check'></i>" SortExpression="Completed">
                         <ItemTemplate>
                             <asp:CheckBox runat="server" ID="CompletedCheckBox" AutoPostBack="true" OnCheckedChanged="CompletedCheckBox_CheckedChanged"
-                                Checked='<%# DataBinder.Eval(Container.DataItem, "Completed") %>'/>
+                                Checked='<%# Convert.ToBoolean(DataBinder.Eval(Container.DataItem, "Completed")) %>'/>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField runat="server" DataField="TodoName" HeaderText="Name" SortExpression="TodoName" />
