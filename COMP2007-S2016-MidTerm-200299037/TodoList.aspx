@@ -40,9 +40,9 @@
                     <asp:BoundField runat="server" DataField="TodoName" HeaderText="Name" SortExpression="TodoName" />
                     <asp:BoundField runat="server" DataField="TodoNotes" HeaderText="Notes" SortExpression="TodoNotes" />
                     <asp:HyperLinkField runat="server" Text="<i class='fa fa-pencil'></i>" HeaderText="<i class='fa fa-pencil'></i>" 
-                        DataNavigateUrlFields="TodoID" DataNavigateUrlFormatString="TodoDetails.aspx?TodoID={0}"
+                        DataNavigateUrlFields="TodoID" DataNavigateUrlFormatString="TodoDetails.aspx?todoID={0}"
                         NavigateUrl="~/TodoDetails.aspx" />               
-                    <asp:CommandField runat="server" DeleteText="<i class='fa fa-trash-o deleteTodo'></i>" HeaderText="<i class='fa fa-trash-o'></i>" 
+                    <asp:CommandField runat="server" DeleteText="<i class='fa fa-trash-o Delete'></i>" HeaderText="<i class='fa fa-trash-o'></i>" 
                         ShowDeleteButton="true" ButtonType="Link" />
                 </Columns>      
             </asp:GridView>
