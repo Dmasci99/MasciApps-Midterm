@@ -21,26 +21,24 @@
      
     <div class="todo-page" id="tododetails">
         <div class="container">
-            <div class="form">
-                <div runat="server" id="ErrorLabel" class="error"></div>
-                <h2 runat="server" id="Title">Add Todo</h2>
-                <div class="input-container">
-                    <asp:Label runat="server" ID="NameLabel" Text="Todo Name"></asp:Label>
-                    <asp:TextBox runat="server" ID="NameTextBox" Placeholder="Todo Name" required="true"></asp:TextBox>
-                </div>
-                <div class="input-container">
-                    <asp:Label runat="server" ID="NotesLabel" Text="Todo Notes"></asp:Label>
-                    <asp:TextBox runat="server" ID="NotesTextBox" TextMode="MultiLine" Placeholder="Todo Notes" required="true"></asp:TextBox>
-                </div>
-                <div class="input-container">
-                    <asp:CheckBox runat="server" ID="CompletedCheckBox" Checked="false" Text=" Todo Completed?"/>
-                </div>
-                <div class="submit">
-                    <asp:Button runat="server" CssClass="cancel" ID="TodoCancelButton" Text="Cancel" UseSubmitBehaviour="false"
-                        CausesValidation="false" OnClick="TodoCancelButton_Click" />
-                    <asp:Button runat="server" CssClass="save" ID="TodoSaveButton" Text="Save" UseSubmitBehaviour="true"
-                        CausesValidation="true" OnClick="TodoSaveButton_Click" />
-                </div>
+            <div runat="server" id="ErrorLabel" class="error"></div>
+            <h2 runat="server" id="Title">Add Todo</h2>
+            <div class="input-container">
+                <asp:Label runat="server" ID="NameLabel" Text="Todo Name"></asp:Label>
+                <asp:TextBox runat="server" ID="NameTextBox" Placeholder="Todo Name" required="true"></asp:TextBox>
+            </div>
+            <div class="input-container">
+                <asp:Label runat="server" ID="NotesLabel" Text="Todo Notes"></asp:Label>
+                <asp:TextBox runat="server" ID="NotesTextBox" TextMode="MultiLine" Placeholder="Todo Notes" required="true"></asp:TextBox>
+            </div>
+            <div class="input-container">
+                <asp:CheckBox runat="server" ID="CompletedCheckBox" Checked="false" Text=" Todo Completed?"/>
+            </div>
+            <div class="submit">
+                <asp:Button runat="server" CssClass="cancel" ID="TodoCancelButton" Text="Cancel" UseSubmitBehaviour="false"
+                    CausesValidation="false" OnClick="TodoCancelButton_Click" />
+                <asp:Button runat="server" CssClass="save" ID="TodoSaveButton" Text="Save" UseSubmitBehaviour="true"
+                    CausesValidation="true" OnClick="TodoSaveButton_Click" />
             </div>
         </div>
     </div>

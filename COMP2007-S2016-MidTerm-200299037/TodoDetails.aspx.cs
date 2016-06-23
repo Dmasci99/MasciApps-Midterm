@@ -14,7 +14,7 @@ namespace COMP2007_S2016_MidTerm_200299037
         {
             if (!IsPostBack)
             {
-                GetTodo();
+                this.GetTodo();
             }
         }
 
@@ -39,8 +39,6 @@ namespace COMP2007_S2016_MidTerm_200299037
                     NotesTextBox.Text = currentTodo.TodoNotes;
                     CompletedCheckBox.Checked = Convert.ToBoolean(currentTodo.Completed);
                 }
-                else
-                    ErrorLabel.InnerHtml += "<br/>Problem retrieving Todo Data";
             }
         }
 
@@ -65,8 +63,6 @@ namespace COMP2007_S2016_MidTerm_200299037
                     newTodo = (from todo in db.Todos
                                where todo.TodoID == todoID
                                select todo).FirstOrDefault();
-                    if (newTodo == null)
-                        ErrorLabel.InnerHtml += "<br/>Problem retrieving existing Todo";
                 }
                 //Prepare Todo with Values
                 newTodo.TodoName = NameTextBox.Text;
@@ -79,7 +75,6 @@ namespace COMP2007_S2016_MidTerm_200299037
                 db.SaveChanges(); //Saves db - updates/inserts
                 Response.Redirect("~/TodoList.aspx");
             }
-                
         }
 
         /**

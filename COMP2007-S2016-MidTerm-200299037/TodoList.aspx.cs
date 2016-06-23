@@ -42,8 +42,6 @@ namespace COMP2007_S2016_MidTerm_200299037
                     TodoGridView.DataSource = todos.AsQueryable().OrderBy(sortString).ToList();
                     TodoGridView.DataBind();
                 }
-                else
-                    ErrorLabel.InnerHtml += "<br/>Problem retrieving Todo Data";
             }
         }
 
@@ -116,8 +114,6 @@ namespace COMP2007_S2016_MidTerm_200299037
                     db.Todos.Remove(todoToDelete); //Remove Tood from db
                     db.SaveChanges(); //Save changes made to db
                 }
-                else
-                    ErrorLabel.InnerHtml += "<br/>Failed to Delete Todo";
                 this.GetTodos(); //Refresh GridView
             }
         }

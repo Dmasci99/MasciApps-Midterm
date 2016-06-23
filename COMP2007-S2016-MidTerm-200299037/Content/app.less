@@ -7,20 +7,89 @@
 *           Global
 ******************************/
 .todo-page {
-
+    .container {
+        position: relative;
+        max-width: 960px;
+        width: 100%;
+        padding: 20px;
+        margin: 0 auto;
+        .button {
+            width: 100%;
+            max-width: 150px;
+            margin: 10px auto;
+            text-align:center;
+            a {
+                display: block;
+                color: darken(white, 10%);
+                background: lighten(black, 20%);
+                border: 2px solid black;
+                padding: 4px 8px;
+                border-radius: 4px;
+                transition: all,0.3s;
+                text-decoration: none;
+                &:hover {
+                    color: white;
+                    background: lighten(black, 40%);
+                }
+            }
+        }//.button
+    }//.container
 }//.todo-page
 
 /******************************
 *           TodoList
 ******************************/
 #todolist {
-    
+    .container {
+        table {
+            margin: 0 auto;
+            th {
+                font-size: 16px;
+                font-variant: small-caps;
+                padding: 5px;
+                .fa-pencil, 
+                .fa-trash-o {
+                    color: grey;
+                }
+            }
+            tr {
+                td {
+                    padding: 5px;
+                    .fa-pencil {
+                        color: green;
+                    }
+                    .fa-trash-o {
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
 }//#todolist
 /******************************
 *          TodoDetails
 ******************************/
 #tododetails {
-
+    .container {
+        .form {
+            width: 100%;
+            max-width: 500px;
+            padding: 40px;
+            text-align: center;
+            .title {
+                font-size: 22px;
+            }
+            .input-container {
+                border: 2px solid blue;
+                border-radius: 4px;
+                width: 100%;
+                margin: 5px auto;
+                input {                    
+                    padding: 4px 8px;
+                }
+            }
+        }
+    }//.container
 }//#tododetails
 
 

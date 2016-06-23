@@ -6,12 +6,78 @@
 /******************************
 *           Global
 ******************************/
+.todo-page .container {
+  position: relative;
+  max-width: 960px;
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+}
+.todo-page .container .button {
+  width: 100%;
+  max-width: 150px;
+  margin: 10px auto;
+  text-align: center;
+}
+.todo-page .container .button a {
+  display: block;
+  color: #e6e6e6;
+  background: #333333;
+  border: 2px solid black;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all,0.3s;
+  text-decoration: none;
+}
+.todo-page .container .button a:hover {
+  color: white;
+  background: #666666;
+}
 /******************************
 *           TodoList
 ******************************/
+#todolist .container table {
+  margin: 0 auto;
+}
+#todolist .container table th {
+  font-size: 16px;
+  font-variant: small-caps;
+  padding: 5px;
+}
+#todolist .container table th .fa-pencil,
+#todolist .container table th .fa-trash-o {
+  color: grey;
+}
+#todolist .container table tr td {
+  padding: 5px;
+}
+#todolist .container table tr td .fa-pencil {
+  color: green;
+}
+#todolist .container table tr td .fa-trash-o {
+  color: red;
+}
 /******************************
 *          TodoDetails
 ******************************/
+#tododetails .container .form {
+  width: 100%;
+  max-width: 500px;
+  padding: 40px;
+  text-align: center;
+}
+#tododetails .container .form .title {
+  font-size: 22px;
+}
+#tododetails .container .form .input-container {
+  border: 2px solid blue;
+  border-radius: 4px;
+  width: 100%;
+  margin: 5px auto;
+}
+#tododetails .container .form .input-container input {
+  padding: 4px 8px;
+}
 /**********************************************************************
 *
 *                          Tom's (native css)
